@@ -1,0 +1,118 @@
+<div class="row">
+  <button (click)="getEvents()">Events</button>
+</div>
+<br><br>
+<div class="row">
+    <button (click)="getProperty()">Property Binding</button>
+  </div>
+  <br><br>
+  <div class="row">
+      <button (click)="getConditions()">Conditions in Angular</button>
+    </div>
+    <br><br>
+    <div class="row">
+        <button (click)="getSwitchStmts()">Switch Case in Angular</button>
+      </div>
+    <br><br>
+<div *ngIf=showData>
+<h1>Welcome to Events</h1>
+
+<h1>Hello World</h1>
+<h1>Hi {{name}}</h1>
+<h2>Hi {{getName()}}</h2>
+<h2>{{obj.name}}</h2>
+<h2>{{array}}</h2>
+<h1>{{siteUrl}}</h1>
+<app-user-list></app-user-list>
+<app-login></app-login>
+<app-signup></app-signup>
+<button (click)="getEmployee(employeeName)">Get Employee Name</button><br><br>
+<button (click)="myEvent('Click Event')">Click Me</button><br><br>
+<input type="text" #box (keyup.space)="myEvent('keyup event')"><br><br>
+<input type="text" (keydown)="myEvent('keydown event')">
+<h1 style="background-color: skyblue;" (mouseover)="myEvent('mouseover event')">mouseover event</h1>
+<h1 style="background-color: red"  (mouseleave)="myEvent('mouseleave event')">MouseLeave Event</h1>
+<button style="background-color:green" (mouseover)="myEvent('two events')" (click)="getEmployee(employeeName)">Two events</button>
+<br>
+<h1>Get textbox value in Angular</h1>
+<input type="text" (keyup)="getVal($event.target.value)">
+<input type="text" #box>
+
+<button (click)="getVal(box.value)">Get Value</button>
+<h1>{{currentVal}}</h1>
+
+<button (click)="getEvents(false)">Back</button>
+</div>
+<br><br>
+<div *ngIf=showData1>
+
+<h1>Property binding in angular</h1>
+<input type="text" [value]="name" [disabled]="disabledValue"><br><br>
+<input type="text" value={{name}} disabled={{disabledValue}}><br><br><br>
+<button (click)="enableBox()">Enable Text Boxes</button><br><br>
+</div>
+<div *ngIf=showData2>
+<h1>Conditions in Angular</h1>
+
+<h1 *ngIf="show=='yes' then ifBlock else elseBlock">
+</h1>
+<ng-template #ifBlock>
+  If Block
+</ng-template>
+<ng-template #elseBlock>
+  else Block
+</ng-template><br><br>
+<ng-template [ngIf]="color=='red'">
+  red Block
+</ng-template>
+<ng-template [ngIf]="color=='green'">
+  green Block
+</ng-template>
+<ng-template [ngIf]="color=='blue'">
+  blue Block
+</ng-template>
+<br><br>
+</div>
+
+<div *ngIf=showData3>
+
+<h1>Switch case in Angular</h1>
+
+<div [ngSwitch]="weekName">
+
+  <h2 style="color: red;" *ngSwitchCase="'sunday'">
+    Today is sunday
+  </h2>
+
+  <h2 style="color: violet;" *ngSwitchCase="'monday'">
+    Today is monday
+  </h2>
+
+  <h2 style="color: blue;" *ngSwitchCase="'tuesday'">
+    Today is tuesday
+  </h2>
+
+  <h2 style="color: indigo;" *ngSwitchCase="'wednesday'">
+    Today is wednesday
+  </h2>
+
+  <h2 style="color: green;" *ngSwitchCase="'thursday'">
+    Today is thursday
+  </h2>
+
+  <h2 style="color: yellow;" *ngSwitchCase="'friday'">
+    Today is friday
+  </h2>
+
+  <h2 style="color: orange;" *ngSwitchCase="'saturday'">
+    Today is saturday
+  </h2>
+
+  <h2 style="color: skyblue;" *ngSwitchDefault>
+    Not Valid Data
+  </h2>
+</div>
+</div>
+
+
+
